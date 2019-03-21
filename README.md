@@ -1,3 +1,8 @@
+© Ihor Mirzov, UJV Rez, March 2019
+Could be freely used and distributed with open-source software
+
+
+
 # gmsh2ccx
 
 Convert Gmsh .inp-file to CalculiX .inp-file.
