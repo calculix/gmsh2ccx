@@ -6,15 +6,9 @@ Could be freely used and distributed with open-source software
 
 # gmsh2ccx
 
-Convert Gmsh .inp-file to CalculiX .inp-file.
+Convert Gmsh .inp-file to CalculiX .inp-file. Works fine with 2D quad and tri first order elements.
 
-Works fine with 2D quad and tri first order elements.
-
-From Gmsh 'Physical Curve' generates *NSET and *SURFACE.
-
-For *SURFACE corectly accounts for element's face/edge number.
-
-It makes possible later to apply boundary conditions on surfaces.
+From Gmsh 'Physical Curve' generates NSET and SURFACE. For SURFACE corectly accounts for element's face/edge number. It makes possible later to apply boundary conditions on surfaces.
 
 Run with command:
 
@@ -26,7 +20,7 @@ where:
 
 - ccx.inp is output file name (for Caclulix)
 
-- 'mtype' is CacluliX element type - now could be 'S3' (for 2D triangular mesh) or 'S4' (for 2D quadrilateral mesh)
+- mtype is CacluliX element type - now could be 'S3' (for 2D triangular mesh) or 'S4' (for 2D quadrilateral mesh)
 
 
 
