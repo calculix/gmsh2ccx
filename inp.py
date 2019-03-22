@@ -3,8 +3,12 @@
 # Could be freely used and distributed with open-source software
 
 """
-    Parses Gmsh or CalculiX .inp-file.
-    Works fine with 2D quadrilateral and triangular first order elements.
+    Parses finite element mesh in the Abaqus, Gmsh or CalculiX .inp-file.
+    Tested on 2D quadrilateral and triangular first order elements.
+    Reads nodes coordinates, elements composition, node and element sets, surfaces.
+    Calculates elements cendroid coordinates.
+    Generates triangles or quadrangles list to use with matplotlib.
+    'project_field_on_centroids' method interpolates node field to elements centroids.
 """
 
 import numpy as np
@@ -79,6 +83,7 @@ class Mesh:
     # Some parameters
     initialized = False
 
+
     # Parse nodes with coordinates
     # *NODE keyword
     def get_nodes(self, lines):
@@ -127,7 +132,8 @@ class Mesh:
                         y += self.nodes[int(n)][1] # sum up y-coordinates of all nodes of the element
                         try: # 3D case
                             z += self.nodes[int(n)][2] # sum up z-coordinates of all nodes of the element
-                        except: pass
+                        except:
+                            pass
                     amount = len(a[1:]) # amount of nodes in element
                     x /= amount; y /= amount; z /= amount
                     self.centroids[num] = (x, y, z) # centroid coordinates 3D
@@ -207,6 +213,7 @@ class Mesh:
         # print('\t{0} esets'.format(len(self.esets)))
         self.set_additional_vars()
         self.initialized = True
+
 
     # Project field on mesh centroids
     def project_field_on_centroids(self, fx, fy, field_values):
