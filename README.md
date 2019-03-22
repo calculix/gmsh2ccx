@@ -6,20 +6,11 @@ Could be freely used and distributed with open-source software
 
 # gmsh2ccx
 
-Convert Gmsh .inp-file to CalculiX .inp-file.
+Convert Gmsh .inp-file to CalculiX .inp-file. Tested on 2D first order triangles and quadrangles.
 
-Tested on 2D first order triangles and quadrangles.
+From Gmsh 'Physical Curve' generates *NSET and *SURFACE blocks. (Gmsh itself does not generate *SURFACE keyword and does not list element edges belonging to the 'Physical Curve'.)
 
-From Gmsh 'Physical Curve' generates *NSET and *SURFACE blocks.
-
-(Gmsh itself does not generate *SURFACE keyword and does not list
-
-element edges belonging to the 'Physical Curve'.)
-
-For *SURFACE corectly accounts for element's edge number.
-
-It makes possible later to apply boundary conditions on 2D element's edges.
-
+For *SURFACE corectly accounts for element's edge number. It makes possible later to apply boundary conditions on 2D element's edges.
 
 Run with command:
 
@@ -31,9 +22,7 @@ where:
 
 - ccx.inp is output file name (for Caclulix)
 
-- 'etype' is CacluliX element type - now could be 'S3'
-
-(for 2D triangular mesh) or 'S4' (for 2D quadrilateral mesh)
+- 'etype' is CacluliX element type - now could be 'S3' (for 2D triangular mesh) or 'S4' (for 2D quadrilateral mesh)
 
 
 
