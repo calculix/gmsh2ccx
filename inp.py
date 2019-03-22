@@ -112,23 +112,25 @@ class Mesh:
     def get_elements(self, lines):
         for i in range(len(lines)):
             if lines[i].startswith('*ELEMENT'):
-                etype = lines[i].split('=')[1].split(',')[0] # element type
-                # elist = {} # element dictionary with nodes
+                # etype = lines[i].split('=')[1].split(',')[0] # element type
+                etype = lines[i].upper().split('TYPE=')[1].split(',')[0] # element type
                 while i+1<len(lines) and not lines[i+1].startswith('*'): # there will be no comments
                     a = lines[i+1].split(', ')
                     num = int(a[0]) # element number
                     self.types[num] = etype # save element type
                     self.elements[num] = () # tuple with element nodes
                     for n in a[1:]:
-                        self.elements[num] += (int(n), ) # add node to tuple (n-2)
+                        self.elements[num] += (int(n), ) # add node to tuple
                     x=0; y=0; z=0
                     for n in a[1:]: # iterate over element's node numbers
                         x += self.nodes[int(n)][0] # sum up x-coordinates of all nodes of the element
                         y += self.nodes[int(n)][1] # sum up y-coordinates of all nodes of the element
-                        z += self.nodes[int(n)][2] # sum up z-coordinates of all nodes of the element
+                        try: # 3D case
+                            z += self.nodes[int(n)][2] # sum up z-coordinates of all nodes of the element
+                        except: pass
                     amount = len(a[1:]) # amount of nodes in element
                     x /= amount; y /= amount; z /= amount
-                    self.centroids[num] = (x, y, z) # centroid coordinates
+                    self.centroids[num] = (x, y, z) # centroid coordinates 3D
                     i += 1
 
     # Parse element sets
@@ -152,7 +154,7 @@ class Mesh:
     def get_surfaces(self, lines):
         for line in lines:
             if line.startswith('*SURFACE'):
-                name = line.split('name=')[1].split(',')[0]
+                name = line.upper().split('NAME=')[1].split(',')[0]
                 self.surfaces += (name, )
 
     # Set additional variables
