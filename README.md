@@ -6,7 +6,7 @@ Could be freely used and distributed with open-source software
 
 # gmsh2ccx
 
-Convert Gmsh .inp-file to CalculiX .inp-file. Tested on 2D first order triangles and quadrangles.
+Convert Gmsh .inp-file to CalculiX .inp-file. Works with 2D first order triangles and quadrangles. Tested in Gmsh 4.2.1 and Calculix 2.15.
 
 From Gmsh 'Physical Curve' generates *NSET and *SURFACE blocks. (Gmsh itself does not generate *SURFACE keyword and does not list element edges belonging to the 'Physical Curve'.)
 
