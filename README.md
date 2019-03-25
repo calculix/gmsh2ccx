@@ -20,7 +20,7 @@ for triangular mesh or:
 
     gmsh gmsh4.geo -2 -o gmsh4.inp -v 0 -save_all
 
-for quadrilateral mesh. Now you have Gmsh .inp-files.
+for quadrilateral mesh.
 
 
 # gmsh2ccx.py
