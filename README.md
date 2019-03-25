@@ -3,26 +3,51 @@
 Could be freely used and distributed with open-source software
 
 
+# Problem description
 
-# gmsh2ccx
+The problem is that for 2D cases during exporting mesh in the .inp-format Gmsh does not generate *SURFACE keyword and does not list element edges belonging to the 'Physical Curve'. It makes impossible later to apply boundary conditions on 2D element's edges in CalculiX.
 
-Convert Gmsh .inp-file to CalculiX .inp-file. Works with 2D first order triangles and quadrangles. Tested in Gmsh 4.2.1 and Calculix 2.15.
+Moreover, for each geometrical line Gmsh creates and exports beam (T3D2) elements which in 2D case is absolutely unacceptable, because leads to unwanted entities in the Calculix model.
 
-From Gmsh 'Physical Curve' generates *NSET and *SURFACE blocks. (Gmsh itself does not generate *SURFACE keyword and does not list element edges belonging to the 'Physical Curve'.)
 
-For *SURFACE corectly accounts for element's edge number. It makes possible later to apply boundary conditions on 2D element's edges.
+# gmsh3.geo, gmsh4.geo
+
+Gmsh example files, generate 2D square and mesh it with CPS3 or CPS4 elements with command:
+
+    gmsh gmsh3.geo -2 -o gmsh3.inp -v 0 -save_all
+
+for triangular mesh or:
+
+    gmsh gmsh4.geo -2 -o gmsh4.inp -v 0 -save_all
+
+for quadrilateral mesh. Now you have Gmsh .inp-files.
+
+
+# gmsh2ccx.py
+
+Convert Gmsh .inp-file to CalculiX .inp-file. Works with 2D first order triangles and quadrangles. Tested in Gmsh 4.2.2 and Calculix 2.15.
+
+The script from Gmsh element sets corresponding to the 'Physical Curve' generates *SURFACE and *NSET (optionally) blocks. For the *SURFACE corectly accounts for element's edge numbers.
 
 Run with command:
 
-    python3 gmsh2ccx.py gmsh.inp ccx.inp etype
+    python3 gmsh2ccx.py -g gmsh3.inp -c ccx3.inp -e S3 -ns 1
+
+or
+
+    python3 gmsh2ccx.py -g gmsh4.inp -c ccx4.inp -e S4 -ns 1
 
 where:
 
-- gmsh.inp is input file name to process (obtained from Gmsh)
+- gmsh3.inp/gmsh4.inp are input file names to process (obtained from Gmsh)
 
-- ccx.inp is output file name (for Caclulix)
+- ccx3.inp/ccx3.inp are output file names (for Caclulix)
 
-- 'etype' is CacluliX element type - now could be 'S3' (for 2D triangular mesh) or 'S4' (for 2D quadrilateral mesh)
+- S3/S4 are CacluliX element types: S3 for 2D triangular mesh, S4 for 2D quadrilateral mesh
+
+- ns is a flag showing whether to output node sets (1) or not (0) 
+
+The script needs inp.py library.
 
 
 
