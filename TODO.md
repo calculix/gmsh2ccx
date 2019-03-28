@@ -1,0 +1,3 @@
+- dimensionality parameter in inp.py - automatically distinct mesh dimensions (2D/3D)
+- check elements normals
+- second order elements S6, S8

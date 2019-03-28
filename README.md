@@ -12,7 +12,7 @@ Moreover, for each geometrical line Gmsh creates and exports beam (T3D2) element
 
 # gmsh3.geo, gmsh4.geo
 
-Gmsh example files, generate 2D square and mesh it with CPS3 or CPS4 elements with command:
+Gmsh example files. You'll need 'gmsh' command to be available in your OS. Generate 2D square and mesh it with CPS3 or CPS4 elements with command:
 
     gmsh gmsh3.geo -2 -o gmsh3.inp -v 0 -save_all
 
