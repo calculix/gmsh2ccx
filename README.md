@@ -47,11 +47,11 @@ where:
 
 - ns is a flag showing whether to output node sets (1) or not (0) 
 
-The script needs inp.py library.
+The script needs INPParser.py library.
 
 
 
-# inp.py
+# INPParser.py
 
 Parses finite element mesh in the Abaqus, Gmsh or CalculiX .inp-file.
 

@@ -10,7 +10,7 @@
 """
 
 import sys, argparse
-from inp import Mesh
+from INPParser import Mesh
 
 # Converts element types from gmsh to ccx
 def rename_element(gmsh_elem_type):
