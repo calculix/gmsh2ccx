@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 # © Ihor Mirzov, UJV Rez, March 2019
-# Could be freely used and distributed with open-source software
 
 """
     Parses finite element mesh in the Abaqus, Gmsh or CalculiX .inp-file.

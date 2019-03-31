@@ -1,4 +1,4 @@
-- dimensionality parameter in inp.py
+- dimensionality parameter in INPParser.py
 - automatically distinguish mesh dimensions (2D/3D)
 - automatically distinguish elements type (S3/S4/S6/S8)
 - check elements normals
