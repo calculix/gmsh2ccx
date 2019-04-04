@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # © Ihor Mirzov, UJV Rez, March 2019
 
+
 """
     Convert Gmsh .inp-file to CalculiX .inp-file.
     Run with command:
@@ -8,8 +9,10 @@
         python3 gmsh2ccx.py -g gmsh4.inp -c ccx4.inp -e S4 -ns 1
 """
 
+
 import sys, argparse
 from INPParser import Mesh
+
 
 # Converts element types from gmsh to ccx
 def rename_element(gmsh_elem_type):
@@ -30,6 +33,7 @@ def rename_element(gmsh_elem_type):
         ccx_elem_type = gmsh_elem_type
         print('Error converting element type', gmsh_elem_type)
     return ccx_elem_type
+
 
 # Element's edge number
 def edge_number(etype, elem_nodes, n1, n2):
@@ -71,6 +75,7 @@ def edge_number(etype, elem_nodes, n1, n2):
                 return edge+1
         return len(elem_nodes)
 
+
 if __name__ == '__main__':
 
     # Command line parameters
@@ -89,8 +94,8 @@ if __name__ == '__main__':
                         type=int, default=0)
     args = parser.parse_args()
 
-
-    mesh = Mesh(args.gmsh) # parse mesh, define nodes, elements and centroids
+    # Parse mesh, define nodes, elements and centroids
+    mesh = Mesh(args.gmsh)
 
     # Process lines of gmsh-file and write ccx-file
     with open(args.ccx, 'w') as ccx:
@@ -153,4 +158,4 @@ if __name__ == '__main__':
                 if len(elems):
                     ccx.write('\t{0}_S{1}, S{1}\n'.format(setname, edge))
 
-        print('Convertion OK')
+        print('Conversion OK')
