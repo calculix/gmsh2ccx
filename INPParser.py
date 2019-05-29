@@ -89,11 +89,11 @@ class Mesh:
         for i in range(len(lines)):
             if lines[i].startswith('*NODE'):
                 while i+1<len(lines) and not lines[i+1].startswith('*'): # read the whole block and return
-                    a = lines[i+1].split(', ')
-                    num = int(a[0]) # node number
+                    a = lines[i+1].split(',')
+                    num = int(a[0].strip()) # node number
                     self.nodes[num] = () # tuple with node coordinates
                     for coord in a[1:]:
-                        self.nodes[num] += (float(coord), ) # add coordinate to tuple
+                        self.nodes[num] += (float(coord.strip()), ) # add coordinate to tuple
                     i += 1
                 return
 
@@ -198,18 +198,18 @@ class Mesh:
         with open(inp_file, 'r') as f:
             for i, line in enumerate(f):
                 if not '**' in line: # skip comments
-                    lines.append(line.strip())
+                    lines.append(line.strip().upper())
         self.get_nodes(lines) # parse nodes
         self.get_nsets(lines) # parse node sets
         self.get_elements(lines) # parse elements
         self.get_esets(lines) # parse node sets
         self.get_surfaces(lines) # parse surfaces
-        # print('Total:')
-        # print('\t{0} nodes'.format(len(self.nodes)))
-        # print('\t{0} elements'.format(len(self.elements)))
-        # print('\t{0} centroids'.format(len(self.centroids)))
-        # print('\t{0} nsets'.format(len(self.nsets)))
-        # print('\t{0} esets'.format(len(self.esets)))
+        print('Total:')
+        print('\t{0} nodes'.format(len(self.nodes)))
+        print('\t{0} elements'.format(len(self.elements)))
+        print('\t{0} centroids'.format(len(self.centroids)))
+        print('\t{0} nsets'.format(len(self.nsets)))
+        print('\t{0} esets'.format(len(self.esets)))
         self.set_additional_vars()
         self.initialized = True
 
