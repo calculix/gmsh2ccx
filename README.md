@@ -1,11 +1,18 @@
-© Ihor Mirzov, UJV Rez, March 2019
+© Ihor Mirzov, UJV Rez, May 2019.  
+Distributed under GNU General Public License, version 2.
+
+<br/><br/>
 
 
-# Problem description
+
+# Gmsh to CalculiX converter (inp to inp)
 
 The problem is that for 2D cases during exporting mesh in the .inp-format Gmsh does not generate *SURFACE keyword and does not list element edges belonging to the 'Physical Curve'. It makes impossible later to apply boundary conditions on 2D element's edges in CalculiX.
 
 Moreover, for each geometrical line Gmsh creates and exports beam (T3D2) elements which in 2D case is absolutely unacceptable, because leads to unwanted entities in the Calculix model.
+
+<br/><br/>
+
 
 
 # gmsh3.geo, gmsh4.geo
@@ -19,6 +26,9 @@ for triangular mesh or:
     gmsh gmsh4.geo -2 -o gmsh4.inp -v 0 -save_all
 
 for quadrilateral mesh.
+
+<br/><br/>
+
 
 
 # gmsh2ccx.py
@@ -47,13 +57,15 @@ where:
 
 The script needs INPParser.py library.
 
+<br/><br/>
+
 
 
 # INPParser.py
 
 Parses finite element mesh in the Abaqus, Gmsh or CalculiX .inp-file.
 
-Tested on 2D quadrilateral and triangular first order elements.
+Tested on C3D8, 2D quadrilateral and triangular first order elements.
 
 Reads nodes coordinates, elements composition, node and element sets, surfaces.
 
