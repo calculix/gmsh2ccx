@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-# © Ihor Mirzov, UJV Rez, March 2019
-
 
 """
+    © Ihor Mirzov, UJV Rez, May 2019.  
+    Distributed under GNU General Public License, version 2.
+
     Convert Gmsh .inp-file to CalculiX .inp-file.
     Run with command:
         python3 gmsh2ccx.py -g gmsh3.inp -c ccx3.inp -e S3 -ns 1

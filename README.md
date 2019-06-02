@@ -5,7 +5,7 @@ Distributed under GNU General Public License, version 2.
 
 
 
-# Gmsh to CalculiX converter (inp to inp)
+# Gmsh to CalculiX converter (.inp to .inp)
 
 The problem is that for 2D cases during exporting mesh in the .inp-format Gmsh does not generate *SURFACE keyword and does not list element edges belonging to the 'Physical Curve'. It makes impossible later to apply boundary conditions on 2D element's edges in CalculiX.
 

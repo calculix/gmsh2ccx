@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-# © Ihor Mirzov, UJV Rez, March 2019
 
 """
+    © Ihor Mirzov, UJV Rez, May 2019.  
+    Distributed under GNU General Public License, version 2.
+
     Parses finite element mesh in the Abaqus, Gmsh or CalculiX .inp-file.
     Tested on 2D quadrilateral and triangular first order elements.
     Reads nodes coordinates, elements composition, node and element sets, surfaces.
