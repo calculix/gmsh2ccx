@@ -74,3 +74,26 @@ Calculates elements cendroid coordinates.
 Generates triangles or quadrangles list to use with matplotlib.
 
 'project_field_on_centroids' method interpolates node field to elements centroids.
+
+<br/><br/>
+
+
+
+# Your help
+
+- Simply use this software and ask questions.
+- Share your models and screenshots.
+- Report problems by [posting issues](./issues).
+- Do something from the [TODO-list](#TODO).
+
+<br/><br/>
+
+
+
+# TODO
+
+- dimensionality parameter in INPParser.py
+- automatically distinguish mesh dimensions (2D/3D)
+- automatically distinguish elements type (S3/S4/S6/S8)
+- check elements normals
+- second order elements S6, S8
