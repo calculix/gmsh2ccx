@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, May 2019.  
-    Distributed under GNU General Public License, version 2.
+    © Ihor Mirzov, May 2019
+    Distributed under GNU General Public License v3.0
 
     Parses finite element mesh in the Abaqus, Gmsh or CalculiX .inp-file.
     Tested on 2D quadrilateral and triangular first order elements.

@@ -1,5 +1,5 @@
 © Ihor Mirzov, May 2019.  
-Distributed under GNU General Public License, version 2.
+Distributed under GNU General Public License v3.0
 
 <br/><br/>
 
