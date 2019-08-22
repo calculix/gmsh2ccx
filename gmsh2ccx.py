@@ -160,3 +160,6 @@ if __name__ == '__main__':
                     ccx.write('\t{0}_S{1}, S{1}\n'.format(setname, edge))
 
         print('Conversion OK')
+
+    if os.path.isdir('__pycache__'):
+        shutil.rmtree('__pycache__') # works in Linux as in Windows

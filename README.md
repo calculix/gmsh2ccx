@@ -1,4 +1,4 @@
-© Ihor Mirzov, May 2019.  
+© Ihor Mirzov, May 2019  
 Distributed under GNU General Public License v3.0
 
 <br/><br/>
@@ -83,7 +83,7 @@ Generates triangles or quadrangles list to use with matplotlib.
 
 - Simply use this software and ask questions.
 - Share your models and screenshots.
-- Report problems by [posting issues](./issues).
+- Report problems by [posting issues](https://github.com/imirzov/gmsh2ccx/issues).
 - Do something from the [TODO-list](#TODO).
 
 <br/><br/>
