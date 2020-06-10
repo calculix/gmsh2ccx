@@ -49,9 +49,9 @@ where:
 
 - gmsh3.inp/gmsh4.inp are input file names to process (obtained from Gmsh)
 
-- ccx3.inp/ccx3.inp are output file names (for Caclulix)
+- ccx3.inp/ccx3.inp are output file names (for CalculiX)
 
-- S3/S4 are CacluliX element types: S3 for 2D triangular mesh, S4 for 2D quadrilateral mesh
+- S3/S4 are CalculiX element types: S3 for 2D triangular mesh, S4 for 2D quadrilateral mesh
 
 - ns is a flag showing whether to output node sets (1) or not (0) 
 
