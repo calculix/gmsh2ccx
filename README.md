@@ -81,6 +81,9 @@ Generates triangles or quadrangles list to use with matplotlib.
 
 # Your help
 
+Please, you may:
+
+- Star this project.
 - Simply use this software and ask questions.
 - Share your models and screenshots.
 - Report problems by [posting issues](https://github.com/calculix/gmsh2ccx/issues).
@@ -97,3 +100,4 @@ Generates triangles or quadrangles list to use with matplotlib.
 - automatically distinguish elements type (S3/S4/S6/S8)
 - check elements normals
 - second order elements S6, S8
+- make pypi package
